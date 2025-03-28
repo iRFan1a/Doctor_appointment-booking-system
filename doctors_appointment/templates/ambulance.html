@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Free Checkups
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<section class="service">
+    <div class="container">
+        <h1>24/7 Ambulance Service</h1>
+        <p>We provide emergency ambulance services available at any time of the day.</p>
+        <button class="btn" onclick="goBack()">Go Back</button>
+    </div>
+
+</section>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+{% endblock %}

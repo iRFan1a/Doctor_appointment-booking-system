@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+doctor_dashboard
+{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+
+   
+    <h1 class="heading"><span>Doctor</span> Dashboard</h1>
+
+    <table>
+        <tr>
+            <th>Patient</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Emergency</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+       
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.patient.username }}</td>
+            <td>{{ appointment.age }}</td>
+            <td>{{ appointment.phone }}</td>
+            <td>{{ appointment.date }}</td>
+            <td class="{% if appointment.is_emergency %}emergency{% endif %}">
+                {{ appointment.is_emergency }}
+            </td>
+            <td class="{% if appointment.status == 'approved' %}status-approved{% elif appointment.status == 'canceled' %}status-canceled{% endif %}">
+                {{ appointment.status|title }}
+            </td>
+             
+            <td>
+                {% if appointment.status == "pending" %}
+                    <a  class="approve-btn" href="/approve_update/{{appointment.id}}">Approve</a> |
+                    <a class="cancel-btn" href="/cancel_update/{{appointment.id}}">Cancel</a>
+                {% else %}
+                    {{ appointment.status|title }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+   
+    </table>
+
+{% endblock %}

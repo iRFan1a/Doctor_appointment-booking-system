@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/loogg.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+    <section id="logins" class="our-blog container-fluid" style="margin-bottom: 50px;">
+        <div class="container">
+        <div class="inner-title">
+
+<h2><b>Logins</b></h2>
+        </div>
+            <div class="col-sm-12 blog-cont">
+                <div class="row no-margin">
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+
+                            <img src="{% static 'images/Screenshot_2025312_113202.png' %}" class ="blog-img" alt="">
+                            <div class="btn-container">
+                                <a href="/login" >
+                                    <button class="btn btn-success btn-sm">Click  Here</button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+
+                            <img src="{% static 'images/Screenshot_2025312_113345.png' %}"  class= "blog-img"alt="">
+                            <div class="btn-container">
+                                <a href="/login" >
+                                    <button class="btn btn-success btn-sm" >Click Here</button>
+                                </a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+
+                            <img src="{% static 'images/Screenshot_2025312_112356.png' %}"  class="blog-img" alt="">
+                            <div class="btn-container">
+                                <a href="/login" >
+                                    <button class="btn btn-success btn-sm">Click Here</button>
+                                </a>
+                            </div>
+                                
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>  
+
+
+{% endblock %}
+
+
+
+
+
+

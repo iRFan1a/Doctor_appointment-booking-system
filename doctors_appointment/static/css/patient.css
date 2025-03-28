@@ -1,0 +1,52 @@
+@media (max-width: 768px) {
+    .container {
+        width: 90% !important;
+        padding: 10px;
+    }
+    
+    .card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    h1.heading {
+        font-size: 2.5rem;
+        margin-top: 100px;
+    }
+
+    img {
+        width: 80px;
+    }
+
+    .btn {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.heading {
+        font-size: 1.5rem;
+        margin-top: 80px;
+    }
+
+    img {
+        width: 70px;
+    }
+
+    .alert {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
+input{
+    font-weight: bold;
+}

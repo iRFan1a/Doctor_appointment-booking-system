@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="login" id="login">
+  
+    <h1 class="heading"><span>Login</span> page</h1>
+
+<div class="main">
+
+    <div class="image">
+      <img src="{% static 'images/nurses-8494324_640.jpg' %}" alt=""> 
+    </div>
+    
+   
+    <form action="/login/" class="fm" method="POST">
+      {% if er %}
+      <div class="alert alert-danger" role="alert">
+        {{er}}
+        </div>
+      {% endif %}
+      
+      {% csrf_token %}
+        <h3>Login</h3>
+
+        <input type="text" name="username" placeholder="username" class="box" id="">
+        
+        <input type="password" name="password" placeholder="password" class="box" id="">
+        
+        <input type="submit" value="log in" class="btn btn-success">
+    </form>
+    
+  </div>
+</section>
+
+
+
+
+{% endblock %}

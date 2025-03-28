@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+register
+{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="register" id="register">
+    <h1 class="heading"><span>register</span> now </h1>
+
+<div class="main">
+
+    <div class="image">
+      <img src="{% static 'images/IMG_20250315_002748.jpg' %}" alt=""> 
+    </div>
+
+    <form action="/register/" class="fm" method="POST">
+
+        {% if er %}
+        <div class="alert alert-danger" role="alert">
+        {{er}}
+        </div>
+        {% endif %}
+
+        {% csrf_token %}
+        <h3>Register</h3>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="username" class="box" id="">
+        <label for="password">Email:</label>
+        <input type="email" name="email" placeholder="email" class="box" id="">
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="password"  class="box" id="">
+        <label for="password">confirm Password:</label>
+        <input type="password" name="psw2" placeholder="confirm password" class="box" id="">
+        <label for="role">Role:</label>
+        <select name="role" class="box">
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+            
+        </select>
+        <button type="submit" class="btn btn-success" >signup</button>
+    </form>
+</div>
+</section>
+
+{% endblock %}
+

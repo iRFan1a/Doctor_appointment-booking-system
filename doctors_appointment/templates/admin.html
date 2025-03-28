@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+admin panel
+{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+
+    <h1 class="heading"><span>Admin panel</span>-Manage appointment</h1>
+<div class="table-container">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Patient</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Emergency</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.patient.username }}</td>
+        <td>{{ appointment.age }}</td>
+        <td>{{ appointment.phone }}</td>
+        <td>{{ appointment.doctor.username }}</td>
+        <td>{{ appointment.date }}</td>
+        <td class="{% if appointment.is_emergency %}emergency{% endif %}">
+            {{ appointment.is_emergency }}
+        </td>
+        <td class="{% if appointment.status == 'approved' %}status-approved{% elif appointment.status == 'canceled' %}status-canceled{% endif %}">
+            {{ appointment.status|title }}
+        </td>
+       
+        
+        <td >
+          
+            {% if appointment.status == "pending" %}
+                <a class="approve-btn"  href="/approve/{{appointment.id}}">Approve</a> |
+                <a class="cancel-btn" href="/cancel/{{appointment.id}}">Cancel</a>
+            {% else %}
+                {{ appointment.status|title }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+        
+
+    </table>
+</div>
+    <script>
+    function changeColor(element) {
+        element.style.color = "red"; // Change text color to red
+        element.style.fontWeight = "bold"; // Make it bold
+    }
+    </script>
+{% endblock %}

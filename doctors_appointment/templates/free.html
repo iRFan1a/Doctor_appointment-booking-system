@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Free Checkups
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="service">
+    <div class="container">
+        <h1>Free Checkups</h1>
+        <p>We offer free health checkups to ensure that everyone has access to essential healthcare services.</p>
+        <button class="btn" onclick="goBack()">Go Back</button>
+    </div>
+
+</section>  
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+{% endblock %}

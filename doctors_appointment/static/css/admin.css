@@ -1,0 +1,101 @@
+.heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 120px;
+    text-align: center;
+    
+}
+
+ .heading span {
+    color: #109c67; 
+ }
+ 
+/* Button Styling */
+.approve-btn {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.emergency {
+    color: red;
+   
+}
+
+td.status-approved {
+    color: green;
+    font-weight: bold;
+}
+
+td.status-canceled {
+    color: red;
+    font-weight: bold;
+}  
+
+/* ✅ General Table Styling */
+.table-container {
+    width: 100%;
+    overflow-x: auto; 
+}
+
+@media screen and (max-width: 1024px) {
+    .heading {
+        font-size: 2.5rem;
+        margin-top: 170px;
+    }
+
+    table {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem;
+        margin-top: 100px;
+
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 2.5rem;
+        margin-top: 100px;
+        margin-bottom: 10px;
+    }
+
+    
+    .table-container {
+        overflow-x: auto; 
+    }
+
+    table {
+        min-width: 200px; 
+        font-size: 0.6rem;
+    }
+
+    th, td {
+        padding: 0.1px;
+    }
+}
+

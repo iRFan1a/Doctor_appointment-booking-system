@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+book_appointment
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/book_app.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+   
+<section class="book" id="book">
+    <h1 class="heading"><span>book</span> now </h1>
+    
+<div class="row">
+    <div class="image">
+        <img src="{% static 'images/book-img.svg' %}" alt=""> 
+    </div>
+
+
+    <form method="POST" class="fm" enctype="multipart/form-data" >
+        {% csrf_token %}
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert" style="font-size: 1.5rem;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+       
+
+        <h3>book appointment</h3>
+        
+        <div class="mb-3">
+            <label for="patient" class="box">Patient:</label>
+            {{ form.patient }}
+        </div>
+        <div class="mb-3">
+            <label for="age" class="box">Age:</label>
+            {{form.age}}                                                                                                                                                                   
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="box">Phone:</label>
+            {{ form.phone }}
+        </div>
+
+        <div class="mb-3">
+            <label for="doctor" class="box" >Select Doctor: </label>
+            {{ form.doctor }}
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="box">Select Date & Time:</label>
+            {{ form.date }}
+        </div>
+        <div class="mb-3">
+            <label for="emergency" class="box d-flex align-items-center" >Is_emergency: 
+                <span class="checkbox-container">{{ form.is_emergency }}</span>
+            </label>
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+    </form>
+</div>
+
+   
+</section>
+
+{% endblock %}

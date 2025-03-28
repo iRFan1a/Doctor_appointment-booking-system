@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+delete_appointment
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container mt-5" >
+    <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px; border-radius: 10px;margin-top:200px;margin-bottom:100px">
+        <h2 class="text-center text-danger" >Delete Appointment</h2>
+        <p class="text-center" style="font-size: 1.2rem;">Are you sure you want to delete this appointment?</p>
+
+        <!-- Form for Deleting Appointment -->
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- Patient Image -->
+            <img src="/media/{{user.profile.image}}" style="width:100px;border-radius:50px" alt="">
+
+            <!-- Appointment Details as Input Fields -->
+            <div class="mb-3">
+                <label class="form-label"><strong>Patient Name</strong></label>
+                <input type="text" class="form-control" style="font-weight:bold;" value="{{ appointment.patient.username }}" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"><strong>Age</strong></label>
+                <input type="text" class="form-control" style="font-weight:bold;" value="{{ appointment.age }}" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"><strong>Phone</strong></label>
+                <input type="text" class="form-control" style="font-weight:bold;" value="{{ appointment.phone }}" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><strong>Doctor Name</strong></label>
+                <input type="text" class="form-control" style="font-weight:bold;" value="{{ appointment.doctor.username }}" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><strong>Appointment Date</strong></label>
+                <input type="text" class="form-control" style="font-weight:bold;" value="{{ appointment.date }}" readonly>
+            </div>
+
+            <!-- Form Buttons -->
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-danger " style="width:350px;background-color:rgb(163, 19, 19)">Delete</button>
+                <a href="/patient_dashboard" class="btn" style="margin-bottom:10px;width:100px">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

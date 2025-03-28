@@ -1,0 +1,126 @@
+
+.heading{
+    
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow-shadow);
+    text-transform:uppercase;
+    color: var(--black);
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    margin-top: 100px;
+    
+
+}
+.heading span
+{
+    
+    color: var(--green);
+}
+.doctors .box-container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+    gap: 2rem;
+    margin-bottom: 100px;
+    justify-content: space-evenly; 
+    align-items: center;
+    padding:  10px;
+    flex-wrap: wrap;
+
+}
+.doctors .box-container .box
+{
+    text-align: center;
+    background: #fff;
+    border-radius: .5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    padding: .1rem;
+    height: 100%;
+    width:200px;
+   
+}
+
+.doctors .box-container .box img
+{
+    height: 10rem;
+    border: var(--border);
+    border-radius: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.doctors .box-container .box h3
+{
+    color: var(--black);
+    font-size: 1.5rem; 
+}
+.doctors .box-container .box h6
+{
+    color: var(--green);
+    font-size: 1.1rem; 
+    
+}
+.doctors .box-container .box span
+{
+    color: var(--green);
+    font-size: 1.2rem; 
+}
+.doctors .box-container .box .share
+{
+    padding-top: 2rem;
+}
+.doctors .box-container .box .share a
+{
+    height: 5%;
+    width: 3rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: var(--green);
+    border-radius:.5rem;
+    border: var(--border);
+    margin: .3rem;
+   
+}
+.doctors .box-container .box .share a:hover
+{
+    background: var(--green);
+    color: #fff;
+    box-shadow: var(--box-shadow);
+}
+/* ===mediaquery doctor==== */
+
+@media (max-width: 1200px) {
+    .doctors .box-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .doctors .box-container {
+        display: flex; /* Use Flexbox instead of Grid */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center horizontally */
+        gap: 30px; /* Add spacing between items */
+    }
+    
+    .doctors .box-container .box {
+        flex: 1 1 45%; /* Allow 2 boxes per row */
+        max-width: 45%; /* Prevent stretching */
+        text-align: center; /* Center text */
+    }
+}
+
+@media (max-width: 480px) {
+    .doctors .box-container {
+        flex-direction: column; /* Stack in one column */
+        align-items: center; /* Center items */
+    }
+
+    .doctors .box-container .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+

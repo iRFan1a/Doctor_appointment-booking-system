@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+expert doctors
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="service">
+    <div class="container" style="height:280px;">
+        <h1>Expert Doctors</h1>
+        <p style="font-size:1.5rem ">Meet our highly skilled and experienced doctors.</p>
+        <p>Dr. John Doe -
+            Gynaecologist ,   
+
+            Dr.Abu Alex-
+            ENT,
+            
+            Dr.Nour Mohmd-
+            cardiologist,
+            
+            Dr.Mostafa Said-
+            Radiologist,
+            
+            Dr.omar elmokhtar-
+            Dentist,
+            
+            Dr.Tamer Hafiz-
+            Pediatrician,
+            
+            Dr.Karem elbnaa-
+            Dermatologist,
+            Dr.Mahmoud baker-
+            Rheumatology</p>
+          <p>more details :check doctors page </p>
+        <button class="btn" onclick="goBack()" >Go Back</button>
+    </div>
+
+</section>  
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+   
+{% endblock %}
+
+
+

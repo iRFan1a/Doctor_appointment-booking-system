@@ -1,0 +1,109 @@
+/* General Styles */
+h2 {
+    color: #109c67;
+    font-size: 35px;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+}
+
+.blog-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ensures proper centering */
+    gap: 30px; /* Adjust gap for better spacing */
+}
+
+.blog-smk {
+    width: 30%; /* Default: 3 columns for larger screens */
+    text-align: center;
+}
+
+.blog-img {
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    height: 200px;
+    width: 100%; /* Make image width responsive */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.btn-container {
+    margin-top: 10px;
+}
+
+.btn {
+    width: 100%; /* Ensures buttons are full-width */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+/* -------- Responsive Media Queries -------- */
+
+/* Tablets (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .blog-smk {
+        width: 90%;/* Adjust to 2 columns */
+       
+}
+
+    .blog-img {
+        height: 180px;
+}
+
+    .btn {
+        width: 80%;
+        font-size: 12px;
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 28px;
+        margin-top: 80px;
+    }
+
+    .blog-smk {
+        width: 90%; /* 1 column */
+       
+    }
+
+    .blog-single {
+        padding: 15px;
+        margin: 0 auto;
+        margin-left: 40px;
+    }
+
+    .blog-img {
+        height: 220px;
+    }
+
+    .btn {
+        width: 90%;
+        font-size: 12px;
+        padding: 7px;
+       
+    }
+}
+
+/* Small screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .blog-img {
+        height: 140px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+}

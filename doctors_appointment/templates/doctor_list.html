@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+our Doctors
+{% endblock %}
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/doctor.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="doctors" id="doctors">
+    <h1 class="heading">our <span>doctors</span></h1>
+    <div class="box-container">
+       
+        
+        {% for doctor in doctors %}
+            <div class="box">
+           
+                <img src="/media/{{doctor.image}}" >
+                <h3>{{ doctor.name }}</h3>
+                <span>{{ doctor.specialization }}</span> 
+                <h6>Availability:{{ doctor.availability }}</h6>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                
+                </div>
+                <a href="/book_app" class="btn" style="margin-bottom:10px;">book now</a>
+            </div>
+        {% endfor %}
+        
+    </div>
+    
+
+    
+</section>                                                                     
+
+
+{% endblock %}

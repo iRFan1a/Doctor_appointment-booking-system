@@ -1,0 +1,43 @@
+GET http://127.0.0.1:8000/api-appointment/
+
+###
+
+GET http://127.0.0.1:8000/api-doctor/
+
+###
+
+POST http://127.0.0.1:8000/api-addappointment/
+Content-Type: Application/json
+
+{
+    "patient": "33" ,"age":9 , "doctor":"15", "date": "2025-03-20"
+     
+    
+
+}
+###
+
+PUT http://127.0.0.1:8000/api-edyappointment/3
+Content-Type: Application/json
+
+{
+    "age":"12"
+}
+###
+
+###
+POST http://127.0.0.1:8000/api-register/
+Content-Type: Application/json
+
+{
+    "username" : "Abimanue" , "password" : "1234","email" : "Abimanue@gmail.com"
+}
+
+###
+
+POST http://127.0.0.1:8000/api-login/
+Content-Type: Application/json
+
+{
+    "username" : "Abimanue" , "password" : "1234"
+}

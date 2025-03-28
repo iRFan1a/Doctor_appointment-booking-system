@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+total care
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+<section class="service">
+    <div class="container">
+        <h1>Total Care</h1>
+        <p>We offer comprehensive medical care and personalized treatment plans.</p>
+        <button class="btn" onclick="goBack()">Go Back</button>
+    </div>
+
+</section>  
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+{% endblock %}

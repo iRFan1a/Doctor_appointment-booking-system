@@ -1,0 +1,102 @@
+
+.book {
+    padding: 50px 10%;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+
+.book .heading {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 60px;
+}
+
+.book .heading span {
+    color: #098b60; 
+}
+
+
+
+.book .row {
+    display: flex;
+    align-items: stretch;  /* Vertically centers items */
+    justify-content: center;  /* Centers content horizontally */
+    flex-wrap: wrap;  /* Ensures responsiveness on smaller screens */
+    gap: 20px;  /* Adds spacing between items */
+    
+}
+
+.book .image {
+    flex: 1 1 450px;  /* Adjusts size while maintaining responsiveness */
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.book .image img {
+    max-width: 100%;
+    height: auto;
+   
+}
+
+.book form {
+    flex: 1 1 350px;  /* Allows form to be flexible and responsive */
+    background: #f5fcf9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: start;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+    height: auto; /* Let content decide the height */
+    min-height: 150px; /* Set a minimum height if needed */
+    overflow: hidden; /* Ensures no extra space */
+   
+  
+
+  
+   
+}
+.fm{
+    height: 50%;
+}
+
+.book .row form h3
+{
+    
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+
+}
+.book form .box {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: var(--border);
+    color: var(--black);
+    text-transform: none;
+    height: 35px;
+    font-size: 1.2rem;
+   
+}
+
+.checkbox-container {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 25px; /* Reduce checkbox size */
+    height: 20px;
+    margin-left: 300px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    transform: scale(0.8); /* Reduce checkbox size slightly */
+    cursor: pointer;
+}

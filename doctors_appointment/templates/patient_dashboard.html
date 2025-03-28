@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/patient.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="heading" style="margin-top:130px;text-align:center"><span style="color: #109c67;">  Patient</span>- Dashboard</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert" style="font-size: 1.5rem; text-align:center;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+
+{% for appointment in appointments %}
+
+
+    <div class="container mt-5" >
+        <div class="card shadow-lg p-4 mx-auto" style="max-width: 500px; border-radius: 10px;margin-bottom:100px">
+            <form method="post" action="/"  style="margin-bottom: 100px;">
+                {% csrf_token %}
+                
+                <img src="/media/{{user.profile.image}}" style="width:100px;border-radius:50px; display: block; margin: 0 auto; object-fit: cover; border:2px solid #ccc; " alt="">
+                <p style="text-align: center;font-size:1.5rem;color:rgb(158, 9, 9);">welcome {{appointment.patient.username}}</p>
+                <div class="mb-3">
+                    <label for="patient">Patient:</label>
+                    <input type="text" id="patient" name="patient" class="form-control" value="{{ appointment.patient.username }}" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="patient">Age:</label>
+                    <input type="text" id="patient" name="age" class="form-control" value="{{ appointment.age }}" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="patient">Phone:</label>
+                    <input type="text" id="patient" name="age" class="form-control" value="{{ appointment.phone }}" readonly>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="doctor">Doctor:</label>
+                    <input type="text" id="doctor" name="doctor" class="form-control" value="{{ appointment.doctor.username }}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" class="form-control" value="{{ appointment.date|date:'Y-m-d' }}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="status">Status:</label>
+                    <input type="text" id="status" name="status" class="form-control" value="{{ appointment.status }}" readonly>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4"></div>
+                    <a href="/editbooking/{{appointment.id}}" class="btn btn-primary" style="height: 36px;width:200px;">Edit</a>     
+                    <a href="/deletebooking/{{appointment.id}}" class="btn btn-danger"  style="width:250px;background-color:rgb(163, 19, 19)">Delete</a>
+                </div>
+            </form>
+        </div>
+    </div>
+<hr> <!-- Separate forms visually -->
+{% endfor %}
+
+
+{% endblock %}
