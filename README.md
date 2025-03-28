@@ -27,7 +27,7 @@ This is a simple Doctor appointment booking system built using python Django.
 * Sqlite
 
 ->How to run
-1.clone the repository
-2.Install dependencies using pip install -r requirement.text
-3.Run migrations using python manage.py migrate
-4.Start the server using python manage.py runserver
+* clone the repository
+* Install dependencies using pip install -r requirement.text
+* Run migrations using python manage.py migrate
+* Start the server using python manage.py runserver
